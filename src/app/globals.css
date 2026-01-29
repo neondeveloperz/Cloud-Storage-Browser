@@ -12,11 +12,28 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* Density Defaults (Comfortable) */
+  --spacing-item-py: 1rem;
+  /* 16px */
+  --spacing-item-h: 60px;
+}
+
+:root[data-density="compact"] {
+  /* Compact Density */
+  --spacing-item-py: 0.5rem;
+  /* 8px */
+  --spacing-item-h: 44px;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 body {

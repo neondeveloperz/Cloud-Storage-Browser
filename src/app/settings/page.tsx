@@ -1,5 +1,5 @@
-import { SettingsPage } from "@/features/settings/components/SettingsPage";
+import { redirect } from "next/navigation";
 
 export default function Page() {
-    return <SettingsPage />;
+    redirect("/settings/appearance");
 }

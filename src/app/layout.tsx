@@ -19,14 +19,19 @@ export const metadata: Metadata = {
 
 import { AppLayout } from "@/features/layout/AppLayout";
 
+import { ThemeEffect } from "@/features/settings/components/logic/ThemeEffect";
+import { DensityEffect } from "@/features/settings/components/logic/DensityEffect";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased select-none`}>
+        <ThemeEffect />
+        <DensityEffect />
         <AppLayout>{children}</AppLayout>
       </body>
     </html>
